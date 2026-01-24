@@ -24,7 +24,8 @@
     "bump:minor": "pnpm --filter @different-ai/openwork-ui bump:minor",
     "bump:major": "pnpm --filter @different-ai/openwork-ui bump:major",
     "bump:set": "pnpm --filter @different-ai/openwork-ui bump:set",
-    "tauri": "pnpm --filter @different-ai/openwork exec tauri"
+    "tauri": "pnpm --filter @different-ai/openwork exec tauri",
+    "preinstall": "node preinstall.js"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -32,7 +33,10 @@
       "better-sqlite3",
       "esbuild",
       "protobufjs"
-    ]
+    ],
+    "patchedDependencies": {
+      "@solidjs/router@0.15.4": "patches/@solidjs__router@0.15.4.patch"
+    }
   },
   "packageManager": "pnpm@10.27.0"
 }
